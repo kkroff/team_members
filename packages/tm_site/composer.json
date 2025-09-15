@@ -1,0 +1,24 @@
+{
+    "name": "kkroff/tm-site",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "https://team-members.ddev.site/",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^13.4",
+        "typo3/cms-rte-ckeditor": "^13.4",
+        "typo3/cms-fluid-styled-content": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kkroff\\TmSite\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "tm_site"
+        }
+    }
+}
