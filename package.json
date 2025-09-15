@@ -1,0 +1,28 @@
+{
+  "name": "team_members",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass \"packages/tm_site/Resources/Private/Styles/style.scss\":\"packages/tm_site/Resources/Public/Css/style.css\" --style=compressed && postcss \"packages/tm_site/Resources/Public/Css/style.css\" -o \"packages/tm_site/Resources/Public/Css/style.css\"",
+    "watch:css": "sass \"packages/tm_site/Resources/Private/Styles/style.scss\":\"packages/tm_site/Resources/Public/Css/style.css\" --watch",
+    "build:js": "esbuild packages/tm_site/Resources/Private/JavaScript/main.js --bundle --minify --sourcemap --target=es2018 --outfile=packages/tm_site/Resources/Public/JavaScript/main.js",
+    "watch:js": "esbuild packages/tm_site/Resources/Private/JavaScript/main.js --bundle --sourcemap --target=es2018 --outfile=packages/tm_site/Resources/Public/JavaScript/main.js --watch",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "npm-run-all --parallel watch:css watch:js"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.9",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.92.1"
+  }
+}

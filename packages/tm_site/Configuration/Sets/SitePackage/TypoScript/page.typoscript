@@ -43,7 +43,6 @@ page {
     }
 
     includeCSS {
-        tm_site_layout = EXT:tm_site/Resources/Public/Css/layout.css
         tm_site_style = EXT:tm_site/Resources/Public/Css/style.css
     }
 

@@ -1,0 +1,23 @@
+html, body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--bg-color);
+  font-family: var(--font-body);
+  color: var(--text-color);
+
+  overflow: hidden;
+}
+
+.tm-topbar {
+  width: 100%;
+  background: var(--tm-color-primary-standard);
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+}
+
+.tm-topbar__logo {
+  height: 40px;   /* etwas kleiner wirkt oft eleganter */
+  width: auto;
+}

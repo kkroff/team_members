@@ -1,21 +1,34 @@
-<ul>
-    <f:for each="{mainnavigation}" as="mainnavigationItem">
-        <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
-            <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
-                {mainnavigationItem.title}
-            </a>
-            <f:if condition="{mainnavigationItem.children}">
-                <ul>
-                    <f:for each="{mainnavigationItem.children}" as="child">
-                        <li class="{f:if(condition: child.active, then:'active')}">
-                            <a href="{child.link}" target="{child.target}" title="{child.title}">
-                                {child.title}
-                            </a>
-                        </li>
-                    </f:for>
-                </ul>
-            </f:if>
-        </li>
-    </f:for>
-</ul>
+<div class="tm-topbar">
+    <a href="/">
+        <img
+            src="{f:uri.resource(path: 'Icons/typo3_white.png', extensionName: 'TmSite')}"
+            alt="TYPO3"
+            class="tm-topbar__logo"
+        />
+    </a>
+</div>
+
+<nav class="tm-nav" aria-label="Hauptnavigation">
+    <ul class="tm-nav__list">
+        <f:for each="{mainnavigation}" as="main">
+            <li class="tm-nav__item {f:if(condition: main.active, then:'is-active')}">
+                <a class="tm-nav__link" href="{main.link}" target="{main.target}" title="{main.title}">
+                    {main.title}
+                </a>
+                <f:if condition="{main.children}">
+                    <ul class="tm-subnav">
+                        <f:for each="{main.children}" as="child">
+                            <li class="tm-subnav__item {f:if(condition: child.active, then:'is-active')}">
+                                <a class="tm-subnav__link" href="{child.link}" target="{child.target}" title="{child.title}">
+                                    {child.title}
+                                </a>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</nav>
+
 <f:render section="Main" />

@@ -39,11 +39,6 @@ return [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
-        'vite_asset_collector' => [
-            'defaultManifest' => '_assets/vite/.vite/manifest.json',
-            'devServerUri' => 'auto',
-            'useDevServer' => 'auto',
-        ],
     ],
     'FE' => [
         'cacheHash' => [

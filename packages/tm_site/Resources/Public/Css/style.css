@@ -1,0 +1,202 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("../Fonts/PTSans/PTSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("../Fonts/PTSans/PTSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("../Fonts/PTSans/PTSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("../Fonts/PTSans/PTSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+:root {
+  --tm-color-primary-standard: #e20074;
+  --tm-color-primary-hovered: #c00063;
+  --tm-color-primary-pressed: #9e0051;
+  --tm-color-text-and-icon-primary: #000000;
+  --tm-color-text-and-icon-primary-hovered: #333333;
+  --color-hover: var(--tm-color-text-and-icon-primary-hovered);
+  --color-active: var(--tm-color-text-and-icon-primary-hovered);
+  --color-selected: var(--tm-color-primary-standard);
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --font-body: "PT Sans", sans-serif;
+  --bg-color: var(--color-black);
+  --text-color: var(--color-white);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  font-family: var(--font-body);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.tm-topbar {
+  width: 100%;
+  background: var(--tm-color-primary-standard);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.tm-topbar__logo {
+  height: 40px; /* etwas kleiner wirkt oft eleganter */
+  width: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: var(--tm-color-primary-standard);
+  color: var(--color-white);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--tm-color-primary-hovered);
+}
+
+.btn:active {
+  background-color: var(--tm-color-primary-pressed);
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-active);
+  outline-offset: 2px;
+}
+
+.tm-nav {
+  background: #000;
+  color: #fff;
+}
+
+.tm-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+
+.tm-nav__item {
+  position: relative;
+}
+
+.tm-nav__link {
+  display: block;
+  padding: 1rem 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tm-nav__item.is-active > .tm-nav__link {
+  text-decoration: underline;
+}
+
+.tm-subnav {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 220px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: none;
+  z-index: 50;
+}
+
+.tm-subnav__link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.tm-subnav__link:hover {
+  background: #222;
+}
+
+.tm-nav__item:hover > .tm-subnav {
+  display: block;
+}
+
+.frame.frame-layout-1 {
+  width: 100vw;
+  height: calc(100vh - var(--nav-height));
+  margin: 0;
+}
+
+.frame.frame-layout-1 :is(.ce-image, .ce-gallery, .ce-outer, .ce-inner, .ce-row, .ce-column, figure.image) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.frame.frame-layout-1 img.image-embed-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame.frame-type-text {
+  max-width: 1200px;
+  margin: 2rem 1rem;
+  padding: 0 1rem;
+  font-family: var(--font-body);
+}
+
+.frame.frame-type-text :is(h1, h2, h3) {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--tm-color-primary-standard);
+}
+
+.frame.frame-type-text p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

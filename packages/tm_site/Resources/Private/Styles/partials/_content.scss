@@ -1,0 +1,36 @@
+.frame.frame-layout-1 {
+  width: 100vw;
+  height: calc(100vh - var(--nav-height));
+  margin: 0;
+}
+.frame.frame-layout-1 :is(.ce-image, .ce-gallery, .ce-outer, .ce-inner, .ce-row, .ce-column, figure.image) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.frame.frame-layout-1 img.image-embed-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame.frame-type-text {
+  max-width: 1200px;
+  margin: 2rem 1rem;
+  padding: 0 1rem;
+  font-family: var(--font-body);
+}
+.frame.frame-type-text :is(h1, h2, h3) {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--tm-color-primary-standard);
+}
+.frame.frame-type-text p {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}

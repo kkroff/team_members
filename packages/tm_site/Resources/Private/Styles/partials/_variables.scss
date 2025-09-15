@@ -1,0 +1,19 @@
+:root {
+  --tm-color-primary-standard: #e20074;
+  --tm-color-primary-hovered: #c00063;
+  --tm-color-primary-pressed: #9e0051;
+
+  --tm-color-text-and-icon-primary: #000000;
+  --tm-color-text-and-icon-primary-hovered: #333333;
+
+  --color-hover: var(--tm-color-text-and-icon-primary-hovered);
+  --color-active: var(--tm-color-text-and-icon-primary-hovered);
+  --color-selected: var(--tm-color-primary-standard);
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --font-body: 'PT Sans', sans-serif;
+  --bg-color: var(--color-black);
+  --text-color: var(--color-white);
+}

@@ -1,0 +1,24 @@
+.btn {
+  display: inline-block;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: var(--tm-color-primary-standard);
+  color: var(--color-white);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background-color: var(--tm-color-primary-hovered);
+}
+
+.btn:active {
+  background-color: var(--tm-color-primary-pressed);
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-active);
+  outline-offset: 2px;
+}
