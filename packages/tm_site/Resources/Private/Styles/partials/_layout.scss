@@ -6,7 +6,8 @@ html, body {
   font-family: var(--font-body);
   color: var(--text-color);
 
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .tm-topbar {
@@ -18,6 +19,6 @@ html, body {
 }
 
 .tm-topbar__logo {
-  height: 40px;   /* etwas kleiner wirkt oft eleganter */
+  height: 40px;
   width: auto;
 }

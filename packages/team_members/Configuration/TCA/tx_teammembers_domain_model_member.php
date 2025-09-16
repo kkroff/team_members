@@ -155,6 +155,7 @@ return [
             'config' => [
                 'type' => 'file',
                 'allowed' => 'common-image-types',
+                'minitems' => 0,
                 'maxitems' => 1,
                 'appearance' => [
                     'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
@@ -165,49 +166,38 @@ return [
                             'config' => [
                                 'appearance' => [
                                     'elementBrowserType' => 'file',
-                                    'elementBrowserAllowed' => 'gif,jpg,jpeg,tif,tiff,bmp,pcx,tga,png,pdf,ai,svg',
+                                    'elementBrowserAllowed' => 'common-image-types',
+                                ],
+                            ],
+                        ],
+                        'crop' => [
+                            'config' => [
+                                'cropVariants' => [
+                                    'default' => [
+                                        'title' => 'Default',
+                                        'allowedAspectRatios' => [
+                                            'NaN' => ['title' => 'Free', 'value' => 0.0],
+                                            '1:1' => ['title' => '1:1', 'value' => 1.0],
+                                            '4:3' => ['title' => '4:3', 'value' => 4 / 3],
+                                            '16:9' => ['title' => '16:9', 'value' => 16 / 9],
+                                        ],
+                                        'selectedRatio' => '1:1',
+                                    ],
                                 ],
                             ],
                         ],
                     ],
                     'types' => [
-                        '0' => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette
-                            ',
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette
-                            ',
-                        ],
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                             'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette
-                            ',
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                            'showitem' => '
-                                --palette--;;audioOverlayPalette,
-                                --palette--;;filePalette
-                            ',
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                            'showitem' => '
-                                --palette--;;videoOverlayPalette,
-                                --palette--;;filePalette
-                            ',
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                            'showitem' => '
-                                --palette--;;imageoverlayPalette,
-                                --palette--;;filePalette
-                            ',
+                        --palette--;;imageoverlayPalette,
+                        --palette--;;filePalette
+                    ',
                         ],
                     ],
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
                 ],
             ],
         ],

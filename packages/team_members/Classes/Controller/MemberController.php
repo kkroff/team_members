@@ -29,39 +29,36 @@ class MemberController extends ActionController
     }
 
     /**
-     * List action - displays selected team members in custom order
+     * List action - displays all or selected team members in custom order
      *
      * @return ResponseInterface
      */
     public function listAction(): ResponseInterface
     {
-        $members = $this->memberRepository->findAll();
-        //$this->setCacheTags($memberUids);
+        $mode = (string)($this->settings['mode'] ?? 'all');
+        $selected = GeneralUtility::intExplode(',', $this->settings['members'] ?? '', true);
 
-        $this->view->assignMultiple([
-            'members' => $members,
-            'settings' => $this->settings,
-        ]);
+        if ($mode === 'all') {
+            $members = $this->memberRepository->findAll()->toArray();
+        } else {
+            if ($selected === []) {
+                $members = [];
+            } else {
+                $memberByUids = $this->memberRepository->findByUids($selected)->toArray();
+                $map = [];
+                foreach ($memberByUids as $loopMember) {
+                    $map[$loopMember->getUid()] = $loopMember;
+                }
+                $members = [];
+                foreach ($selected as $uid) {
+                    if (isset($map[$uid])) {
+                        $members[] = $map[$uid];
+                    }
+                }
+            }
+        }
+
+        $this->view->assign('members', $members);
         return $this->htmlResponse();
-    }
-
-    /**
-     * Set cache tags for automatic cache clearing
-     *
-     * @param array $memberUids
-     * @return void
-     */
-    protected function setCacheTags(array $memberUids): void
-    {
-        $cacheTags = ['tx_teammembers'];
-
-        foreach ($memberUids as $uid) {
-            $cacheTags[] = 'tx_teammembers_' . $uid;
-        }
-
-        if ($this->request->getAttribute('frontend.cache.instruction')) {
-            $cacheInstruction = $this->request->getAttribute('frontend.cache.instruction');
-            $cacheInstruction->addCacheTags($cacheTags);
-        }
     }
 }

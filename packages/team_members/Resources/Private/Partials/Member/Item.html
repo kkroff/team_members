@@ -1,27 +1,25 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <div class="tx-teammembers-item">
-    <f:if condition="{showPhoto} && {member.photo}">
+    <f:if condition="{member.photo}">
         <div class="tx-teammembers-item-photo">
             <f:for each="{member.photo}" as="image">
-                <f:image image="{image}" alt="{member.name}" title="{member.name}" maxWidth="200" maxHeight="200" />
+                <f:image image="{image}" alt="{member.name}" title="{member.name}" maxWidth="400" />
             </f:for>
         </div>
     </f:if>
-    
+
     <div class="tx-teammembers-item-content">
         <h3 class="tx-teammembers-item-name">{member.name}</h3>
-        
+
         <div class="tx-teammembers-item-meta">
             <div class="tx-teammembers-item-role">{member.role}</div>
-            <div class="tx-teammembers-item-department">{member.department}</div>
+            <div class="tx-teammembers-item-department">({member.department})</div>
         </div>
-        
-        <f:if condition="{showDescription} && {member.description}">
-            <div class="tx-teammembers-item-description">
-                <f:format.nl2br>{member.description}</f:format.nl2br>
-            </div>
-        </f:if>
+
+        <div class="tx-teammembers-item-description">
+            <f:format.nl2br>{member.description}</f:format.nl2br>
+        </div>
     </div>
 </div>
 

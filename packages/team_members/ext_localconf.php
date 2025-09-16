@@ -14,7 +14,8 @@ defined('TYPO3') || die();
         [
             \Kkroff\TeamMembers\Controller\MemberController::class => 'list',
         ],
-        [],
+        [
+        ],
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
 
     );

@@ -1,19 +1,62 @@
-:root {
-  --tm-color-primary-standard: #e20074;
-  --tm-color-primary-hovered: #c00063;
-  --tm-color-primary-pressed: #9e0051;
+// Variables
 
-  --tm-color-text-and-icon-primary: #000000;
+// Colors
+$tm-color-primary-standard: #e20074;
+$tm-color-primary-hovered:  #c00063;
+$tm-color-primary-pressed:  #9e0051;
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-text-primary:  #111111;
+$color-text-muted:    #666666;
+
+$color-surface:       #ffffff;
+$color-surface-alt:   #f9f9f9;
+$color-border:        #e0e0e0;
+
+// Typography
+$font-body: 'PT Sans', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Radii
+$radius-card: 14px;
+$radius-none: 0;
+
+// Spacing scale
+$sp-1: .25rem;
+$sp-2: .5rem;
+$sp-3: .75rem;
+$sp-4: 1rem;
+$sp-5: 1.25rem;
+$sp-6: 1.5rem;
+$sp-8: 2rem;
+$sp-10: 2.5rem;
+
+// Breakpoints
+$bp-xs: 480px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+:root {
+  --tm-color-primary-standard: #{$tm-color-primary-standard};
+  --tm-color-primary-hovered:  #{$tm-color-primary-hovered};
+  --tm-color-primary-pressed:  #{$tm-color-primary-pressed};
+
+  --tm-color-text-and-icon-primary: #{$color-black};
   --tm-color-text-and-icon-primary-hovered: #333333;
 
   --color-hover: var(--tm-color-text-and-icon-primary-hovered);
   --color-active: var(--tm-color-text-and-icon-primary-hovered);
   --color-selected: var(--tm-color-primary-standard);
 
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
 
-  --font-body: 'PT Sans', sans-serif;
+  --font-body: #{$font-body};
   --bg-color: var(--color-black);
   --text-color: var(--color-white);
 }

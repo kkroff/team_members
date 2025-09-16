@@ -1,0 +1,98 @@
+.tx-teammembers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: $sp-8;
+  margin: $sp-8 auto;
+  padding: 0 $sp-4;
+  max-width: 1200px;
+  justify-content: center;
+
+  @media (max-width: $bp-xs) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $sp-5;
+  }
+
+  .tx-teammembers-item {
+    max-width: 320px;
+    margin: 0 auto;
+    background: lighten($color-surface, 4%);
+    border: 4px solid $tm-color-primary-standard;
+    border-radius: $radius-card;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &-photo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: $sp-4;
+
+      img {
+        max-width: 160px;
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      padding: $sp-5 $sp-5 $sp-6;
+      text-align: center;
+      width: 100%;
+    }
+
+    &-name {
+      font-size: 1.25rem;
+      margin: 0 0 $sp-4;
+      color: $tm-color-primary-standard;
+    }
+
+    &-meta {
+      background: $color-surface-alt;
+      border: 1px solid $color-border;
+      border-radius: $radius-none;
+      padding: .6rem .8rem;
+      margin: 0 0 $sp-4;
+      font-size: .95rem;
+      color: $color-black;
+      line-height: 1.4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .3rem;
+
+      .tx-teammembers-item-role,
+      .tx-teammembers-item-department {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+    }
+
+    &-description {
+      font-style: italic;
+      font-size: .95rem;
+      line-height: 1.6;
+      color: $color-black;
+      padding: 0 .8rem;
+    }
+  }
+}
+
+.tx-teammembers-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  min-height: 200px;
+  font-size: 1rem;
+  color: $color-text-muted;
+}
