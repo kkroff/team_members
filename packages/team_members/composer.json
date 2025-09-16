@@ -1,0 +1,24 @@
+{
+    "name": "kkroff/team-members",
+    "type": "typo3-cms-extension",
+    "description": "TYPO3 extension for managing team members with clean architecture and modern best practices",
+    "homepage": "https://team-members.ddev.site/",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS", "team", "members", "staff"],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^13.4",
+        "typo3/cms-extbase": "^13.4",
+        "typo3/cms-fluid": "^13.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kkroff\\TeamMembers\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "team_members"
+        }
+    }
+}

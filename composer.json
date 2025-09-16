@@ -14,6 +14,7 @@
 		"sort-packages": true
 	},
 	"require": {
+		"kkroff/team-members": "^1.0",
 		"kkroff/tm-site": "^1.0",
 		"typo3/cms-backend": "^13.4",
 		"typo3/cms-belog": "^13.4",
