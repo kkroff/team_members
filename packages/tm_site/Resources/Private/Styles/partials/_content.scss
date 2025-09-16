@@ -3,7 +3,7 @@
   height: calc(100vh - var(--nav-height));
   margin: 0;
 }
-.frame.frame-layout-1 :is(.ce-image, .ce-gallery, .ce-outer, .ce-inner, .ce-row, .ce-column, figure.image) {
+.frame.frame-layout-1 {
   width: 100%;
   max-width: none;
   margin: 0;

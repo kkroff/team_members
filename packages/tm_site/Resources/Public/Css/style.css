@@ -138,8 +138,8 @@ html, body {
   left: 0;
   top: 100%;
   min-width: 220px;
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000000;
+  border: 1px solid #666666;
   display: none;
   z-index: 50;
 }
@@ -147,7 +147,7 @@ html, body {
 .tm-subnav__link {
   display: block;
   padding: 0.5rem 0.75rem;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-family: var(--font-body);
   font-size: 1rem;
@@ -156,7 +156,7 @@ html, body {
 }
 
 .tm-subnav__link:hover {
-  background: #222;
+  background: #666666;
 }
 
 .tm-nav__item:hover > .tm-subnav {
@@ -169,7 +169,7 @@ html, body {
   margin: 0;
 }
 
-.frame.frame-layout-1 :is(.ce-image, .ce-gallery, .ce-outer, .ce-inner, .ce-row, .ce-column, figure.image) {
+.frame.frame-layout-1 {
   width: 100%;
   max-width: none;
   margin: 0;
@@ -282,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .tx-teammembers-list .tx-teammembers-item-description {
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #000000;
   padding: 0 0.8rem;

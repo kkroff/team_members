@@ -35,8 +35,8 @@
   left:0;
   top:100%;
   min-width:220px;
-  background:#111;
-  border:1px solid rgba(255,255,255,.1);
+  background:$color-black;
+  border:1px solid $color-text-muted;
   display:none;
   z-index:50;
 }
@@ -44,7 +44,7 @@
 .tm-subnav__link {
   display:block;
   padding:.5rem .75rem;
-  color:#fff;
+  color:$color-white;
   text-decoration:none;
   font-family: var(--font-body);
   font-size: 1rem;
@@ -52,6 +52,6 @@
   white-space:nowrap;
 }
 
-.tm-subnav__link:hover { background:#222; }
+.tm-subnav__link:hover { background:$color-text-muted; }
 
 .tm-nav__item:hover > .tm-subnav { display:block; }
