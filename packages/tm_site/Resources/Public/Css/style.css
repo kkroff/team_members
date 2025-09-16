@@ -42,6 +42,10 @@
   --text-color: var(--color-white);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -82,7 +86,7 @@ html, body {
 
 .btn:active {
   background-color: var(--tm-color-primary-pressed);
-  transform: scale(0.98);
+  transform: scale(0.9);
 }
 
 .btn:focus {
@@ -135,7 +139,7 @@ html, body {
   top: 100%;
   min-width: 220px;
   background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: none;
   z-index: 50;
 }
@@ -146,7 +150,7 @@ html, body {
   color: #fff;
   text-decoration: none;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   white-space: nowrap;
 }
@@ -204,20 +208,15 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.tx-teammembers-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin: 2rem auto;
+.tx-teammembers {
   padding: 0 1rem;
-  max-width: 1200px;
-  justify-content: center;
+  margin: 2rem auto;
 }
-@media (max-width: 480px) {
-  .tx-teammembers-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
+
+.tx-teammembers-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .tx-teammembers-list .tx-teammembers-item {
   max-width: 320px;
@@ -227,6 +226,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 14px;
   overflow: hidden;
   display: flex;
+  flex-basis: calc(50% - 0.5rem);
   flex-direction: column;
   align-items: center;
 }
@@ -251,6 +251,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   width: 100%;
 }
+@media (max-width: 480px) {
+  .tx-teammembers-list .tx-teammembers-item-content {
+    padding: 0.5rem 0.5rem 1rem;
+  }
+}
 .tx-teammembers-list .tx-teammembers-item-name {
   font-size: 1.25rem;
   margin: 0 0 1rem;
@@ -270,11 +275,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.3rem;
 }
-.tx-teammembers-list .tx-teammembers-item-meta .tx-teammembers-item-role,
-.tx-teammembers-list .tx-teammembers-item-meta .tx-teammembers-item-department {
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+.tx-teammembers-list .tx-teammembers-item-department {
+  color: #666666;
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 .tx-teammembers-list .tx-teammembers-item-description {
   font-style: italic;
@@ -282,6 +286,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
   color: #000000;
   padding: 0 0.8rem;
+}
+@media (max-width: 480px) {
+  .tx-teammembers-list .tx-teammembers-item-description {
+    hyphens: auto;
+  }
 }
 
 .tx-teammembers-empty {

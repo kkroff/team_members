@@ -1,16 +1,12 @@
-.tx-teammembers-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: $sp-8;
-  margin: $sp-8 auto;
+.tx-teammembers {
   padding: 0 $sp-4;
-  max-width: 1200px;
-  justify-content: center;
+  margin: $sp-8 auto;
+}
 
-  @media (max-width: $bp-xs) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: $sp-5;
-  }
+.tx-teammembers-list {
+  display: flex;
+  gap: $sp-4;
+  flex-wrap: wrap;
 
   .tx-teammembers-item {
     max-width: 320px;
@@ -20,6 +16,7 @@
     border-radius: $radius-card;
     overflow: hidden;
     display: flex;
+    flex-basis: calc(50% - $sp-2);
     flex-direction: column;
     align-items: center;
 
@@ -46,6 +43,10 @@
       padding: $sp-5 $sp-5 $sp-6;
       text-align: center;
       width: 100%;
+
+      @media (max-width: $bp-xs) {
+        padding: $sp-2 $sp-2 $sp-4;
+      }
     }
 
     &-name {
@@ -68,12 +69,12 @@
       align-items: center;
       gap: .3rem;
 
-      .tx-teammembers-item-role,
-      .tx-teammembers-item-department {
-        white-space: normal;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-      }
+    }
+
+    &-department {
+      color: $color-text-muted;
+      text-transform: uppercase;
+      font-size: 0.875rem;
     }
 
     &-description {
@@ -82,6 +83,10 @@
       line-height: 1.6;
       color: $color-black;
       padding: 0 .8rem;
+
+      @media (max-width: $bp-xs) {
+        hyphens: auto;
+      }
     }
   }
 }
