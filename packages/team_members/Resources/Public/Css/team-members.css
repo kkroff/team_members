@@ -1,0 +1,104 @@
+/* Team Members Plugin Styles */
+.tx-teammembers {
+    margin: 20px 0;
+}
+
+.tx-teammembers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.tx-teammembers-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.tx-teammembers-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.tx-teammembers-item-photo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.tx-teammembers-item-photo img {
+    border-radius: 50%;
+    max-width: 120px;
+    height: auto;
+    border: 3px solid #f0f0f0;
+}
+
+.tx-teammembers-item-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.tx-teammembers-item-meta {
+    margin-bottom: 15px;
+}
+
+.tx-teammembers-item-role {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.tx-teammembers-item-department {
+    color: #888;
+    font-size: 0.9em;
+    text-transform: capitalize;
+}
+
+.tx-teammembers-item-description {
+    color: #555;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.tx-teammembers-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-style: italic;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tx-teammembers-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .tx-teammembers-item {
+        padding: 15px;
+    }
+    
+    .tx-teammembers-item-name {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .tx-teammembers {
+        margin: 10px 0;
+    }
+    
+    .tx-teammembers-item {
+        padding: 12px;
+    }
+    
+    .tx-teammembers-item-photo img {
+        max-width: 80px;
+    }
+}

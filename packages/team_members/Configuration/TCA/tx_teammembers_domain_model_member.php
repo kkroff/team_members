@@ -16,7 +16,9 @@ return [
         ],
         'sortby' => 'sorting',
         'searchFields' => 'name,role,department,description',
-        'iconfile' => 'EXT:team_members/Resources/Public/Icons/tx_teammembers_domain_model_member.gif',
+        'typeicon_classes' => [
+            'default' => 'tx-teammembers-plugin',
+        ],
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],

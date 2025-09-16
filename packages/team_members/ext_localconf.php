@@ -1,24 +1,24 @@
 <?php
 
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
+
+
 defined('TYPO3') || die();
 
 (static function () {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    teammembers_list {
-                        iconIdentifier = team-members-plugin
-                        title = LLL:EXT:team_members/Resources/Private/Language/locallang_db.xlf:tx_teammembers_domain_model_member
-                        description = LLL:EXT:team_members/Resources/Private/Language/locallang_db.xlf:tx_teammembers_domain_model_member.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = teammembers_list
-                        }
-                    }
-                }
-                show = *
-            }
-        }'
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'TeamMembers',
+        'List',
+        [
+            \Kkroff\TeamMembers\Controller\MemberController::class => 'list',
+        ],
+        [],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
+
     );
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] =
+        \Kkroff\TeamMembers\Hooks\DataHandlerHook::class;
 })();

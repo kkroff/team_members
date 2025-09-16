@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <el>selectedMembers
+                    <settings.mode>
+                        <label>LLL:EXT:team_members/Resources/Private/Language/locallang.xlf:plugin.flexform.mode</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <numIndex index="0">LLL:EXT:team_members/Resources/Private/Language/locallang.xlf:plugin.flexform.mode.showall</numIndex>
+                                    <numIndex index="1">all</numIndex>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <numIndex index="0">LLL:EXT:team_members/Resources/Private/Language/locallang.xlf:plugin.flexform.mode.showselected</numIndex>
+                                    <numIndex index="1">selection</numIndex>
+                                </numIndex>
+                            </items>
+                            <default>all</default>
+                        </config>
+                    </settings.mode>
+
+                    <settings.members>
+                        <label>LLL:EXT:team_members/Resources/Private/Language/locallang.xlf:plugin.flexform.selectedMembers</label>
+                        <displayCond>FIELD:settings.mode:=:selection</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectMultipleSideBySide</renderType>
+                            <itemsProcFunc>Kkroff\TeamMembers\Flex\ItemsProcFunc->getMembers</itemsProcFunc>
+                            <minitems>0</minitems>
+                            <maxitems>999</maxitems>
+                        </config>
+                    </settings.members>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2025-09-16T16:20:00Z" product-name="team_members">
+	<file source-language="en" target-language="de"  datatype="plaintext" original="messages" date="2025-09-16T16:20:00Z" product-name="team_members">
 		<header/>
         <body>
             <trans-unit id="plugin.title">
                 <source>Team Members</source>
+                <target>Team-Mitglieder</target>
             </trans-unit>
             <trans-unit id="plugin.description">
                 <source>Displays team members with their roles and information</source>
+                <target>Zeigt Team-Mitglieder mit ihren Rollen und Informationen an</target>
             </trans-unit>
             <trans-unit id="plugin.flexform.mode">
                 <source>Mode</source>
+                <target>Modus</target>
             </trans-unit>
             <trans-unit id="plugin.flexform.mode.showall">
                 <source>Show all</source>
+                <target>Zeige alle</target>
             </trans-unit>
             <trans-unit id="plugin.flexform.mode.showselected">
                 <source>Show selection</source>
+                <target>Zeige Auswahl</target>
             </trans-unit>
             <trans-unit id="plugin.flexform.selectedMembers">
                 <source>Selected team members</source>
+                <target>Ausgewählte Team-Mitglieder</target>
             </trans-unit>
         </body>
 	</file>
