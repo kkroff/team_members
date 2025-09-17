@@ -12,6 +12,8 @@ Im Frontend werden die Daten in einer responsiven Liste ausgegeben.
 - ddev composer install
 - ddev npm install
 - ddev import-db --src=.ddev/dumps/kickstart.sql.gz
+- ddev composer dump-autoload 
+- ddev exec vendor/bin/typo3 cache:flush
 
 => Frontend: https://team-members.ddev.site  
 => Backend: https://team-members.ddev.site/typo3  
