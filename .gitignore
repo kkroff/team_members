@@ -5,8 +5,5 @@ nbproject
 !/var/labels
 /vendor
 /node_modules
+/public/*
 !/public/.htaccess
-
-
-!/public/fileadmin/user_upload/images/
-!/public/fileadmin/user_upload/images/**
