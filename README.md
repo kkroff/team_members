@@ -13,11 +13,11 @@ Im Frontend werden die Daten in einer responsiven Liste ausgegeben.
 - ddev npm install
 - ddev import-db --src=.ddev/dumps/kickstart.sql.gz
 
-=> Frontend: https://team-members.ddev.site/
+=> Frontend: https://team-members.ddev.site/  
 => Backend: https://team-members.ddev.site/typo3
 
 Login: admin
-Login: a(good)Password42
+Password: a(good)Password42
 
 Login: redakteur
-Login: another(good)Password42
+Password: another(good)Password42
