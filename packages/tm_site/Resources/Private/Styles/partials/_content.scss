@@ -38,3 +38,17 @@
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
+
+.wrapper,
+figure,
+.image { width: 100%; max-width: none; }
+
+img { display: block; width: 100%; height: auto; }
+
+#c6 img.image-embed-item {display:block; width:100%; height:auto;}
+#c6 figure.image,
+#c6 .ce-column,
+#c6 .ce-row,
+#c6 .ce-inner,
+#c6 .ce-outer,
+#c6 .ce-gallery {width:100%; max-width:none; margin:0; padding:0;}
